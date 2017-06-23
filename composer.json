@@ -1,0 +1,12 @@
+{
+  "name": "linpax/microphp-validator",
+  "description": "MicroPHP validator",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Zcasper",
+      "email": "testuser@mail.linpax.org"
+    }
+  ]
+}
