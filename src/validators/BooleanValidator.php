@@ -5,7 +5,7 @@
  * @license https://github.com/linpax/microphp-framework/blob/master/LICENSE
  */
 
-namespace Micro\Validators;
+namespace Micro\Validator\Validators;
 
 use Micro\Validator\Validator;
 
@@ -48,6 +48,12 @@ class BooleanValidator extends Validator
      */
     public function clientCode($model, $element, $options)
     {
+        if (!array_key_exists('true', $options)) {
+            $options['true'] = 'true';
+        }
+        if (!array_key_exists('false', $options)) {
+            $options['false'] = 'false';
+        }
         return 'if (this.value != '.$options['true'].' && this.value != '.$options['false'].') {'.
             ' e.preventDefault(); this.focus(); alert(\'Value not compatible\'); }';
     }
