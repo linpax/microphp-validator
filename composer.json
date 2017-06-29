@@ -8,5 +8,16 @@
       "name": "Zcasper",
       "email": "testuser@mail.linpax.org"
     }
-  ]
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "ext-mbstring": "*",
+    "lib-pcre": ">=8.31"
+  },
+  "autoload": {
+    "psr-4": {
+      "Micro\\Validator\\": "src/",
+      "Micro\\Validator\\Validators\\": "src/validators/"
+    }
+  }
 }
