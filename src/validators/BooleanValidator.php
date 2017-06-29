@@ -35,7 +35,11 @@ class BooleanValidator extends Validator
             $options['false'] = false;
         }
 
-        if (!in_array($value, [ $options['true'], $options['false'] ], false)) {
+        if (!in_array(
+            $value,
+            [ $options['true'], $options['false'] ],
+            array_key_exists('strict', $options) ? $options['strict'] : true
+        )) {
             array_push($this->errors, 'Element `' . $element . '` validate with `' . get_class($this) . '` error');
             return false;
         }
